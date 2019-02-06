@@ -4,14 +4,15 @@ require 'hashie'
 require 'faraday'
 require 'multi_json'
 require 'cloud_payments/version'
-require 'cloud_payments/config'
 require 'cloud_payments/namespaces'
 require 'cloud_payments/models'
-require 'cloud_payments/client'
-require 'cloud_payments/webhooks'
 
 module CloudPayments
   extend self
+
+  autoload :Client, 'cloud_payments/client'
+  autoload :Config, 'cloud_payments/config'
+  autoload :Webhooks, 'cloud_payments/webhooks'
 
   def config=(value)
     @config = value
